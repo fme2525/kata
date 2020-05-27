@@ -10,6 +10,12 @@ class Erastosthenes
     (2..@limit).to_a
   end
 
+  def self.next(n)
+    e = Erastosthenes.new(100)
+    primes = e.calculate()
+    primes.detect { |x| x > n }
+  end
+
   def calculate
     list = number_list
     list.each do |x|
